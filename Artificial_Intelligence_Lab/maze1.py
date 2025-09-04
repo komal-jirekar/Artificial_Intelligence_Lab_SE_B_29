@@ -1,17 +1,14 @@
 from collections import deque
-
 def bfs(maze, start, end):
     # Directions: up, right, down, left
     directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]
     queue = deque([start])  # Queue for BFS
     visited = set(start)    # Keep track of visited cells
-
-    while queue:
+  while queue:
         current = queue.popleft()
         if current == end:
             return True  # Path found to exit
-
-        for direction in directions:
+             for direction in directions:
             # Calculate the next cell's position
             next_cell = (current[0] + direction[0], current[1] + direction[1])
 
@@ -22,8 +19,7 @@ def bfs(maze, start, end):
                     next_cell not in visited):
                 queue.append(next_cell)
                 visited.add(next_cell)
-
-    return False  # No path found
+ return False  # No path found
 
 # Example maze where '#' is a wall, 'S' is start, and 'E' is end
 maze = [

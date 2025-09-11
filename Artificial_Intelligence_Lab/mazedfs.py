@@ -21,9 +21,7 @@ def dfs(maze, start, end):
             if (0 <= new_x < len(maze) and 0 <= new_y < len(maze[0]) and
                     maze[new_x][new_y] == 0 and (new_x, new_y) not in visited):
                 stack.append((new_x, new_y))
-
-    return False # Return False if no path is found
-
+ return False # Return False if no path is found
 # Example maze: 0 -> open path, 1 -> wall
 maze = [
     [0, 1, 0, 0, 0],
@@ -32,7 +30,6 @@ maze = [
     [1, 1, 1, 1, 0],
     [0, 0, 0, 0, 0]
 ]
-
 # Start and end positions
 start = (0, 0)
 end = (4, 4)
